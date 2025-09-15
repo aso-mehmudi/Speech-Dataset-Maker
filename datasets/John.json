@@ -1,0 +1,13 @@
+{
+  "LangCode": "eng",
+  "LangTitle": "English",
+  "TextDirection": "ltr",
+  "SentencesFile": "datasets/eng_sentences.txt",
+  "OutputDir": "John",
+  "WavsDir": "John/wavs",
+  "SampleRate": 48000,
+  "BitDepth": 16,
+  "Channels": 1,
+  "Speaker": "John",
+  "Gender": "male"
+}

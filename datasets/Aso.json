@@ -1,0 +1,13 @@
+{
+  "LangCode": "ckb",
+  "LangTitle": "Central Kurdish",
+  "TextDirection": "rtl",
+  "SentencesFile": "datasets/ckb_sentences.tsv",
+  "OutputDir": "Aso",
+  "WavsDir": "Aso/wavs",
+  "SampleRate": 22050,
+  "BitDepth": 16,
+  "Channels": 1,
+  "Speaker": "Aso",
+  "Gender": "male"
+}

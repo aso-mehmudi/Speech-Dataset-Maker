@@ -1,0 +1,86 @@
+﻿<Window x:Class="SpeechDatasetMaker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpeechDatasetMaker"
+        mc:Ignorable="d"
+        Title="Speech Dataset Maker (Windows Only)"
+        Height="450"
+        Width="800">
+        <Grid>
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Margin="20">
+
+                        <Label Content="Microphone:"/>
+                        <ComboBox Name="MicCombo"
+                                  Height="25"
+                                  Margin="0,0,0,20"/>
+
+                        <Label Content="Dataset:"/>
+                        <ComboBox Name="DatasetCombo"
+                                  Height="25"
+                                  Margin="0,0,0,20"
+                                  SelectionChanged="DatasetCombo_SelectionChanged"/>
+
+                        <TextBlock Name="StatusText"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,10"/>
+
+                        <Border BorderBrush="Gray"
+                                BorderThickness="1"
+                                Padding="15"
+                                Margin="0,0,0,20">
+                                <TextBox Name="SentenceText"
+                                         Text="Select a dataset first"
+                                         TextAlignment="Center"
+                                         TextWrapping="Wrap"
+                                         Padding="10"
+                                         FontSize="20"/>
+                        </Border>
+
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
+                                <Button Name="RecordBtn"
+                                        Content="⏺ Record"
+                                        Width="90"
+                                        Height="40"
+                                        Foreground="Red"
+                                        Click="Record_Click"
+                                        Margin="0,0,20,0"/>
+                                <Button Name="StopBtn"
+                                        Content="⏹ Stop"
+                                        Width="90"
+                                        Height="40"
+                                        Click="Stop_Click"
+                                        IsEnabled="False"
+                                        Margin="0,0,20,0"/>
+                                <Button Name="PlayBtn"
+                                        Content="▶ Play"
+                                        Width="90"
+                                        Height="40"
+                                        Foreground="Blue"
+                                        Click="Play_Click"
+                                        IsEnabled="False"
+                                        Margin="0,0,20,0"/>
+                                <Button Name="SaveBtn"
+                                        Content="💾 Save"
+                                        Width="90"
+                                        Height="40"
+                                        Foreground="Green"
+                                        Click="Save_Click"
+                                        IsEnabled="False"/>
+                        </StackPanel>
+
+                </StackPanel>
+
+                <DockPanel Grid.Row="1"
+                           Background="AliceBlue">
+                        <Label>© 2025 Aso Mahmudi (github.com/aso-mehmudi)</Label>
+                </DockPanel>
+        </Grid>
+</Window>
