@@ -28,6 +28,7 @@ public class datasetConfig
   public int SampleRate { get; set; }
   public int BitDepth { get; set; }
   public int Channels { get; set; }
+  public float SilenceThreshold { get; set; }
   public string Speaker { get; set; }
   public string Gender { get; set; }
 }
@@ -41,8 +42,6 @@ public partial class MainWindow : Window
   private WaveOutEvent waveOut;
   private datasetConfig conf;
   private string tempFile;
-
-  public float threshold = 0.05f; // Adjust silence threshold as needed
 
   public MainWindow()
   {
@@ -242,7 +241,7 @@ public partial class MainWindow : Window
       int startIndex = 0;
       for (int i = 0; i < samples.Length; i++)
       {
-        if (Math.Abs(samples[i]) > threshold)
+        if (Math.Abs(samples[i]) > conf.SilenceThreshold)
         {
           startIndex = i;
           break;
@@ -254,7 +253,7 @@ public partial class MainWindow : Window
       int endIndex = samples.Length - 1;
       for (int i = samples.Length - 1; i >= 0; i--)
       {
-        if (Math.Abs(samples[i]) > threshold)
+        if (Math.Abs(samples[i]) > conf.SilenceThreshold)
         {
           endIndex = i;
           break;

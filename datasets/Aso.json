@@ -8,6 +8,7 @@
   "SampleRate": 22050,
   "BitDepth": 16,
   "Channels": 1,
+  "SilenceThreshold": 0.01,
   "Speaker": "Aso",
   "Gender": "male"
 }
