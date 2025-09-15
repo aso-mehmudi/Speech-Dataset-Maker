@@ -8,79 +8,95 @@
         Title="Speech Dataset Maker (Windows Only)"
         Height="450"
         Width="800">
-        <Grid>
-                <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="auto"/>
+    </Grid.RowDefinitions>
 
-                <StackPanel Margin="20">
+    <StackPanel Margin="20">
+      <DockPanel>
+        <Label Content="Microphone:"
+               DockPanel.Dock="Left"/>
+        <ComboBox Name="MicCombo"
+                  Height="25"
+                  Margin="0,0,0,20"/>
+      </DockPanel>
+      <DockPanel>
+        <Label Content="Dataset:"
+               DockPanel.Dock="Left"/>
+        <TextBlock Margin="5"
+                   DockPanel.Dock="Right">
+            <Hyperlink Click="OpenFolder_Click">
+                Datasets Folder
+            </Hyperlink>
+        </TextBlock>
+        <ComboBox Name="DatasetCombo"
+                  Height="25"
+                  Margin="0,0,0,20"
+                  SelectionChanged="DatasetCombo_SelectionChanged"/>
+      </DockPanel>
 
-                        <Label Content="Microphone:"/>
-                        <ComboBox Name="MicCombo"
-                                  Height="25"
-                                  Margin="0,0,0,20"/>
+      <TextBlock Name="StatusText"
+                 FontWeight="Bold"
+                 Margin="0,0,0,10"/>
 
-                        <Label Content="Dataset:"/>
-                        <ComboBox Name="DatasetCombo"
-                                  Height="25"
-                                  Margin="0,0,0,20"
-                                  SelectionChanged="DatasetCombo_SelectionChanged"/>
+      <Border BorderBrush="Gray"
+              BorderThickness="1"
+              Padding="15"
+              Margin="0,0,0,20">
+        <TextBox Name="SentenceText"
+                 Text="Select a dataset first"
+                 TextAlignment="Center"
+                 TextWrapping="Wrap"
+                 Padding="10"
+                 FontSize="20"/>
+      </Border>
 
-                        <TextBlock Name="StatusText"
-                                   FontWeight="Bold"
-                                   Margin="0,0,0,10"/>
+      <StackPanel Orientation="Horizontal"
+                  HorizontalAlignment="Center">
+        <Button Name="RecordBtn"
+                Content="⏺ Record"
+                Width="90"
+                Height="40"
+                Foreground="Red"
+                Click="Record_Click"
+                Margin="0,0,20,0"/>
+        <Button Name="StopBtn"
+                Content="⏹ Stop"
+                Width="90"
+                Height="40"
+                Click="Stop_Click"
+                IsEnabled="False"
+                Margin="0,0,20,0"/>
+        <Button Name="PlayBtn"
+                Content="▶ Play"
+                Width="90"
+                Height="40"
+                Foreground="Blue"
+                Click="Play_Click"
+                IsEnabled="False"
+                Margin="0,0,20,0"/>
+        <Button Name="SaveBtn"
+                Content="💾 Save"
+                Width="90"
+                Height="40"
+                Foreground="Green"
+                Click="Save_Click"
+                IsEnabled="False"
+                Margin="0,0,20,0"/>
+        <Button Name="OutFolderBtn"
+                Content="Output Folder"
+                Width="90"
+                Height="40"
+                Click="OutFolder_Click"/>
+      </StackPanel>
 
-                        <Border BorderBrush="Gray"
-                                BorderThickness="1"
-                                Padding="15"
-                                Margin="0,0,0,20">
-                                <TextBox Name="SentenceText"
-                                         Text="Select a dataset first"
-                                         TextAlignment="Center"
-                                         TextWrapping="Wrap"
-                                         Padding="10"
-                                         FontSize="20"/>
-                        </Border>
+    </StackPanel>
 
-                        <StackPanel Orientation="Horizontal"
-                                    HorizontalAlignment="Center">
-                                <Button Name="RecordBtn"
-                                        Content="⏺ Record"
-                                        Width="90"
-                                        Height="40"
-                                        Foreground="Red"
-                                        Click="Record_Click"
-                                        Margin="0,0,20,0"/>
-                                <Button Name="StopBtn"
-                                        Content="⏹ Stop"
-                                        Width="90"
-                                        Height="40"
-                                        Click="Stop_Click"
-                                        IsEnabled="False"
-                                        Margin="0,0,20,0"/>
-                                <Button Name="PlayBtn"
-                                        Content="▶ Play"
-                                        Width="90"
-                                        Height="40"
-                                        Foreground="Blue"
-                                        Click="Play_Click"
-                                        IsEnabled="False"
-                                        Margin="0,0,20,0"/>
-                                <Button Name="SaveBtn"
-                                        Content="💾 Save"
-                                        Width="90"
-                                        Height="40"
-                                        Foreground="Green"
-                                        Click="Save_Click"
-                                        IsEnabled="False"/>
-                        </StackPanel>
-
-                </StackPanel>
-
-                <DockPanel Grid.Row="1"
-                           Background="AliceBlue">
-                        <Label>© 2025 Aso Mahmudi (github.com/aso-mehmudi)</Label>
-                </DockPanel>
-        </Grid>
+    <DockPanel Grid.Row="1"
+               Background="AliceBlue">
+      <Label>© 2025 Aso Mahmudi (github.com/aso-mehmudi)</Label>
+    </DockPanel>
+  </Grid>
 </Window>

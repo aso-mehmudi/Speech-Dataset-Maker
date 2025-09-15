@@ -8,7 +8,8 @@ using System.Windows.Controls;
 using NAudio.Wave;
 using Microsoft.Win32;
 using System.Text.Json;
-
+using System.Diagnostics;
+using System.Windows.Documents;
 
 namespace SpeechDatasetMaker;
 
@@ -64,14 +65,17 @@ public partial class MainWindow : Window
     {
       if (Path.GetExtension(file) == ".json")
       {
-        datasets.Add(Path.GetFileNameWithoutExtension(file));
-        DatasetCombo.Items.Add(Path.GetFileNameWithoutExtension(file));
+        var title = Path.GetFileNameWithoutExtension(file);
+        datasets.Add(title);
+        DatasetCombo.Items.Add(title);
       }
     }
   }
-
+  private void OpenFolder_Click(object sender, RoutedEventArgs e)
+  {
+    Process.Start("explorer.exe", "datasets");
+  }
   // when the user selects a dataset, load the sentences from that dataset
-
   private void DatasetCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
   {
     if (DatasetCombo.SelectedIndex == -1) return;
@@ -278,5 +282,11 @@ public partial class MainWindow : Window
         File.Copy(inputFile, outputFile, true);
       }
     }
+  }
+
+  private void OutFolder_Click(object sender, RoutedEventArgs e)
+  {
+    if (conf != null)
+      Process.Start("explorer.exe", $"\"{conf.OutputDir.Replace("/", "\\")}\"");
   }
 }
