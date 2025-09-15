@@ -12,16 +12,16 @@ Speech Dataset Maker is a Windows application designed to simplify the creation 
 - **Editable Metadata**: Edit the text before saving to the metadata file.
 
 ## Installation
-1. Download the setup file from the Releases page.
+1. Download the [setup file](https://github.com/aso-mehmudi/Speech-Dataset-Maker/releases/download/v1.0/SpeechDatasetMaker-x64.exe) from the Releases page.
 1. Install the application.
-1. Ensure .NET 8.0+ Runtime is installed on your system.
+1. Ensure .NET 8.0 Desktop Runtime is installed on your system.
 
 ## Requirements
 - Windows operating system
-- .NET 8.0+ Runtime
+- [.NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer) (57MB)
 
 ## Usage
-To start recording each dataset you need:  
+To start recording each dataset, you need:  
 - a `.json` file for configurations  
 - a `.tsv` file with ID–sentence pairs  
 
