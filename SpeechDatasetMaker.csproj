@@ -12,6 +12,14 @@
     <PackageReference Include="NAudio" Version="2.2.1" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Resource Include="icon.ico" />
+  </ItemGroup>
+
   <ItemGroup>
     <Content Include="datasets\*.*">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

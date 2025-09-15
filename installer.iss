@@ -32,6 +32,7 @@ DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users).
 PrivilegesRequired=lowest
 OutputBaseFilename=SpeechDatasetMaker
+SetupIconFile=C:\Aso\TTS\Speech-Dataset-Maker\icon.ico
 SolidCompression=yes
 WizardStyle=modern
 

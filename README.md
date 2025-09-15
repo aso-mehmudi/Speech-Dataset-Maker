@@ -18,6 +18,7 @@ Speech Dataset Maker is a Windows application designed to simplify the creation 
 - Windows operating system
 - .NET 8.0+ Runtime
 
+## Usage
 To start recording each dataset you need:  
 - a `.json` file for configurations  
 - a `.tsv` file with ID–sentence pairs  
