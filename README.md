@@ -1,6 +1,8 @@
 # Speech Dataset Maker
 Speech Dataset Maker is a Windows application designed to simplify the creation of high-quality speech datasets for training Text-to-Speech (TTS) models. It is especially convenient for directly preparing datasets in Piper format.
 
+![Screenshot](Screenshot.png)
+
 ## Features
 - **User-Friendly Interface**: Intuitive GUI for easy dataset creation.
 - **Direct Export for TTS**: Export recordings directly in Piper format without a separate export step.
